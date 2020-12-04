@@ -114,3 +114,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/weights/uncased_L-4_H-512_A-8/
+/weights/uncased_L-8_H-512_A-8/
