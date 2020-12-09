@@ -632,6 +632,8 @@ def model_fn_builder(bert_config, num_labels, init_checkpoint, learning_rate,
         input_mask = features["input_mask"]
         segment_ids = features["segment_ids"]
         label_ids = features["label_ids"]
+
+        # decide real example?
         is_real_example = None
         if "is_real_example" in features:
             is_real_example = tf.cast(features["is_real_example"], dtype=tf.float32)
@@ -760,6 +762,7 @@ def input_fn_builder(features, seq_length, is_training, drop_remainder):
         return d
 
     return input_fn
+
 
 
 # This function is not used by this file but is still used by the Colab and
